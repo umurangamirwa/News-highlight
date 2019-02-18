@@ -44,3 +44,13 @@ def index():
     # print(popular_news)
     title = 'Home - Welcome to The best News Review Website Online'
     return render_template('index.html', title = title,popular = popular_news,upcoming = upcoming_news, now_showing = now_showing_news)
+@app.route('/movie/<int:id>')
+def news(id):
+
+    '''
+    View news page function that returns the news details page and its data
+    '''
+    news = get_news(id)
+    title = f'{news.title}'
+
+    return render_template('news.html',title = title,news = news)
