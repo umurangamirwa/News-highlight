@@ -2,7 +2,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    News_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
+    News_API_BASE_URL ='https://api.thenewsdb.org/3/movie/{}?api_key={}'
     pass
 
 
