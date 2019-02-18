@@ -22,8 +22,8 @@ def get_news(category):
         if get_news_response['articles']:
             news_results_list = get_news_response['articles']
             news_results = process_results(news_results_list)
-
-
+            print(news_results)
+    
     return news_results
 def process_results(news_list):
     '''
@@ -37,15 +37,15 @@ def process_results(news_list):
     '''
     news_results = []
     for news_item in news_list:
-        id = news_item.get('id')
-        title = news_item.get('original_title')
-        overview = news_item.get('overview')
-        poster = news_item.get('poster_path')
-        vote_average = news_item.get('vote_average')
-        vote_count = news_item.get('vote_count')
+        id = news_item.get('source.id')
+        title = news_item.get('title')
+        overview = news_item.get('description')
+        poster = news_item.get('urlToImage')
+        content = news_item.get('content')
+        publishedAt = news_item.get('publishedAt')
 
         if poster:
-            news_object = News(id,title,overview,poster,vote_average,vote_count)
+            news_object = News(id,title,overview,poster,content,publishedAt)
             news_results.append(news_object)
 
     return news_results

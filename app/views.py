@@ -11,14 +11,14 @@ from .request import get_news
 #     return render_template('index.html')
 
 # Views
-@app.route('/news/<int:news_id>')
-def news(news_id):
+# @app.route('/news/<int:news_id>')
+# def news(news_id):
 
-    '''
-    View news page function that returns the news details page and its data
-    '''
+#     '''
+#     View news page function that returns the news details page and its data
+#     '''
 
-    return render_template('news.html',id = news_id)
+#     return render_template('news.html',id = news_id)
 @app.route('/')
 def index():
 
@@ -44,7 +44,7 @@ def index():
     # print(popular_news)
     title = 'Home - Welcome to The best News Review Website Online'
     return render_template('index.html', title = title,popular = popular_news,upcoming = upcoming_news, now_showing = now_showing_news)
-@app.route('/movie/<int:id>')
+@app.route('/news/<int:id>')
 def news(id):
 
     '''
