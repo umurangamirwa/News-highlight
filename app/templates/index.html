@@ -12,19 +12,24 @@
                 <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
                 <input type="submit"  value="Submit" class="btn btn-default">
             </form>
-          <!-- Popular news -->
-        <h3> Popular News</h3>
+          <!-- Sport news -->
+        <h3> Sports news</h3>
         <ul>
-            {{ macro.displayNewsList(popular)}}
+            {{ macro.displaySourceList(sports)}}
         </ul>
-        <!-- Upcoming news  -->
-        <h3> Upcoming News </h3>
+        <!-- general news  -->
+        <h3> General news </h3>
         <ul>
-            {{ macro.displayNewsList(upcoming)}}
+            {{ macro.displaySourceList(general)}}
         </ul>
-        <!-- Now showing news -->
-        <h3>Now Showing</h3>
+        <!-- business news -->
+        <h3>Business news</h3>
         <ul>
-            {{ macro.displayNewsList(now_showing)}}
+            {{ macro.displaySourceList(business)}}
         </ul>
+        <h3>Technology news</h3>
+        <ul>
+            {{ macro.displaySourceList(technology)}}
+        </ul>
+        
         {% endblock%}

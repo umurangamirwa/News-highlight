@@ -1,22 +1,53 @@
-{% macro displayNewsList(news_list) %}
+<!-- {% macro displayNewsList(news_list) %}
 
     {% for news in news_list %}
-        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card">
+        <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 news-card"> -->
             <!-- <img src="{{ news.poster }}" alt="{{ news.title }} poster" class="img-responsive"> -->
-            <li class="text-center">
+            <!-- <li class="text-center">
                 <a href="/news/{{news.id}}">
                     {{ news.title|truncate(10)}}</a>
             </li>
         </div>
     {% endfor %}
 
-{% endmacro %}
+{% endmacro %} -->
 <!-- Displaying reviews macro -->
-{% macro displayReviews(review_list) %}
+<!-- {% macro displayReviews(review_list) %}
     {% for review in review_list %}
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
         <h2> {{ review.title}} </h2>
         <p> {{ review.review | truncate(30) }}</p>
     </div>
+    {% endfor %}
+{% endmacro %} -->
+
+{% macro displaySourceList(source_list) %}
+
+    {% for source in source_list %}
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="panel" style="border-bottom: 1px solid #000;">
+          <div class="panel-heading" style="background-color:#000; color: #fff; font-size: 18px;">{{source.name}}</div>
+          <div class="panel-body" style="font-size: 16px;">
+            <p>{{source.description | truncate(100)}}</p>
+            <a href="/news/{{source.id}}" class="btn" style="color: #fff; background-color: #000;">See more from this site</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro displayNewsList(news_list) %}
+
+    {% for news in news_list %}
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="margin-bottom: 20px;">
+          <img src="{{news.urlToImage}}" alt="{{news.title}}" class="img-responsive" style="height: 200px;">
+          <h4>{{news.title | truncate(35)}}</h4>
+          <p>{{news.description | truncate(80)}}</p>
+          <br>
+            <small>Published At: {{news.publishedAt}}</small>
+            <br>
+          <a href="{{news.url}}" target="_blank" class="btn" style="background-color: #000; color: #fff; margin-top: 5px;">Read more...</a>
+      </div>
     {% endfor %}
 {% endmacro %}
