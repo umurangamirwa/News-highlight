@@ -15,7 +15,7 @@ To clone this click here https://github.com/umurangamirwa/News-highlight
 
 ## Run this command lines in your terminal:
 
-* run.py
+* python3.6 run.py
 
 ## Technologies Used
 
