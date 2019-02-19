@@ -16,10 +16,9 @@ class Review:
     @classmethod
     def clear_reviews(cls):
         Review.all_reviews.clear()
-        class Review:
+        # class Review:
 
-    all_reviews = []
-...... # Some code is here
+     # Some code is here
     @classmethod
     def get_reviews(cls,id):
 

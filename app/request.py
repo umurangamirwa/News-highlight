@@ -1,8 +1,8 @@
 from app import app
 import urllib.request,json
-from .models import article
+from .models import article, source
 
-News = article.News
+News = source.News
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 # Getting the news base url
@@ -12,6 +12,7 @@ def get_news(category):
     Function that gets the json response to our url request
     '''
     get_news_url = base_url.format(category,api_key)
+    print(get_news_url)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -19,8 +20,8 @@ def get_news(category):
 
         news_results = None
 
-        if get_news_response['articles']:
-            news_results_list = get_news_response['articles']
+        if get_news_response['sources']:
+            news_results_list = get_news_response['sources']
             news_results = process_results(news_results_list)
             print(news_results)
     
@@ -37,19 +38,16 @@ def process_results(news_list):
     '''
     news_results = []
     for news_item in news_list:
-        id = news_item.get('source.id')
-        title = news_item.get('title')
+        id = news_item.get('id')
+        title = news_item.get('name')
         overview = news_item.get('description')
-        poster = news_item.get('urlToImage')
-        content = news_item.get('content')
-        publishedAt = news_item.get('publishedAt')
-
-        if poster:
-            news_object = News(id,title,overview,poster,content,publishedAt)
-            news_results.append(news_object)
+        # content = news_item.get('content')
+        # publishedAt = news_item.get('publishedAt')
+        news_object = News(id,title,overview)
+        news_results.append(news_object)
 
     return news_results
-    def search_news(news_name):
+def search_news(news_name):
     search_news_url = 'https://newsapi.org/v2/everything?api_Key={}&query={}'.format(api_key,news_name)
     with urllib.request.urlopen(search_news_url) as url:
         search_news_data = url.read()
@@ -59,7 +57,7 @@ def process_results(news_list):
 
         if search_news_response['articles']:
             search_news_list = search_movie_response['articles']
-            search_news_articles = process_results(search_news_list)
+            # search_news_articles = process_results(search_news_list)
 
 
     return search_news_articles
