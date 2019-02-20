@@ -8,26 +8,26 @@
         <!-- Content block -->
         {% block content %}
         <div class="container">
-            <form>
+            <!-- <form>
                 <input type="text" name="news_query" placeholder="Search for a News" class="form-control">
                 <input type="submit"  value="Submit" class="btn btn-default">
-            </form>
+            </form> -->
           <!-- Sport news -->
-        <h3> Sports news</h3>
+        <h3 class="center" style="font-weight:bold; text-align:center;"> Sports news</h3>
         <ul>
             {{ macro.displaySourceList(sports)}}
         </ul>
         <!-- general news  -->
-        <h3> General news </h3>
+        <h3 class="center" style="font-weight:bold; text-align:center;"> General news </h3>
         <ul>
             {{ macro.displaySourceList(general)}}
         </ul>
         <!-- business news -->
-        <h3>Business news</h3>
+        <h3 class="center" style="font-weight:bold; text-align:center;">Business news</h3>
         <ul>
             {{ macro.displaySourceList(business)}}
         </ul>
-        <h3>Technology news</h3>
+        <h3 class="center" style="font-weight:bold; text-align:center;">Technology news</h3>
         <ul>
             {{ macro.displaySourceList(technology)}}
         </ul>

@@ -25,11 +25,11 @@
 
     {% for source in source_list %}
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <div class="panel" style="border-bottom: 1px solid #000;">
-          <div class="panel-heading" style="background-color:#000; color: #fff; font-size: 18px;">{{source.name}}</div>
+        <div class="panel" style="border-bottom: 1px solid rgb(5, 41, 143);">
+          <div class="panel-heading" style="background-color:rgb(5, 41, 143); color: #fff; font-size: 18px;">{{source.name}}</div>
           <div class="panel-body" style="font-size: 16px;">
             <p>{{source.description | truncate(100)}}</p>
-            <a href="/news/{{source.id}}" class="btn" style="color: #fff; background-color: #000;">See more from this site</a>
+            <a href="/news/{{source.id}}" class="btn" style="color: #fff; background-color: rgb(5, 41, 143);">See more from this site</a>
           </div>
         </div>
       </div>
