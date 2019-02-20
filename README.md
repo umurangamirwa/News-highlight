@@ -17,8 +17,13 @@ To clone this click here https://github.com/umurangamirwa/News-highlight
 
 * python3.6 run.py
 
-## Technologies Used
+## link to live site on GitHub Pages
 
+https://newshighlightmimi.herokuapp.com/
+
+## Technologies Used
+* css
+* html
 * Python v3.6
 * Boostrap
 * Flask
